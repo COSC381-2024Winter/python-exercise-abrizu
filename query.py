@@ -16,8 +16,10 @@ def __menu__():
             print("Exiting the program.")
             exit()
         elif menu == "l":
+            i = 1
             for movie in movies._movies:
-                print(movie['name'])
+                print(i,": ", movie['name'])
+                i += 1
         elif menu == "s":
             searchMovie = input("\nSearch for a movie: ")
             __search__(searchMovie)
