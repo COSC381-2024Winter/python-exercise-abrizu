@@ -29,5 +29,12 @@ class Movies:
                 }
             )
 
+    def search_movies(self, movieStr):
+        found_movies = []
+        for movie in self._movies:
+            if movieStr.lower() in movie['name'].lower():
+                found_movies.append(movie['name'])
+        return found_movies
+
 if __name__ == "__main__":
     movies = Movies('./movies.txt')
