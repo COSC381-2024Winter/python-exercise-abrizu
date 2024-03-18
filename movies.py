@@ -36,5 +36,15 @@ class Movies:
                 found_movies.append(movie['name'])
         return found_movies
 
+    def search_cast(self, castStr):
+        found_movies = []
+        for movie in self._movies:
+            cast = movie['cast']
+            for actor in cast:
+                if castStr.lower() in actor.lower():
+                    found_movies.append((movie['name'], actor))
+                    break
+        return found_movies
+
 if __name__ == "__main__":
     movies = Movies('./movies.txt')
